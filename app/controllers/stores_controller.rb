@@ -1,10 +1,10 @@
 class StoresController < ApplicationController
   efore_action :set_store
   before_action :set_item, only: [:show]
-  
+
   def index
-    stores = Store.all
-    render component: "Stores", props: { stores: stores }
+    @stores = Store.all
+    render component: "Stores", props: { stores: @stores }
   end
 
   def show
@@ -16,7 +16,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    store = Store.new(store_params)
+    @store = Store.new(store_params)
     if store.save
       redirect_to root_path
     else
