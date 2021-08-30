@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-   get "/stores", to: "stores#index"
-   get "/stores/new", to: "stores#new"
-  #  root "stores#index"
+  #  get "/stores", to: "stores#index"
+  #  get "/stores/new", to: "stores#new"
+    root "stores#index"
   
-  #  resources :stores
+    resources :stores
   #  resources :stores do
   #   resouces :items
   #  end
