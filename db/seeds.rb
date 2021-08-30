@@ -5,16 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# require "faker"
-# Sub.destroy_all
-# Topic.destroy_all
-# 10.times do
-#   x = Faker::Company.name
-#   s = Sub.create(name: "#{x}")
-#   4.times do
-#     s.topics.create(name: Faker::Commerce.product)
-#   end
-# end
+require "faker"
+Store.destroy_all
+Item.destroy_all
+#comment.destroy_all
+4.times do
+    s1 = Store.create(
+        name: Faker::company.name,
+        manager: Faker::Name.name,
+        num_employees: Faker::Number.number(digits:2) )
+  5.times do
+    i1 = s1.items.create(
+        name: Faker::Game.platform
+        sale rand(2).even?)
+  end
+end
 # puts "seeded #{Sub.all.size} Subs"
 # puts "first sub name: #{Sub.first.name}"
 # puts "seeded #{Topic.all.size} Topics"
