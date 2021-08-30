@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  efore_action :set_store
+  before_action :set_store
   before_action :set_item, only: [:show]
 
   def index
@@ -24,7 +24,7 @@ class StoresController < ApplicationController
   end
 
   def edit
-    render component: "StoreEdit", props{store: @store}
+    render component: "StoreEdit", props: {store: @store}
   end
 
   def update
